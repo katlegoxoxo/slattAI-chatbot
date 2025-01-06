@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins";
+    box-sizing: border-box;
+}
+
+body{
+    background: white;
+    height: 100vh;
+    font-family: "Outfit";
+}
+i{
+    font-size: 16px;
+}
+.container{
+    height: 100%;
+    display: flex;
+}
+.sideNavigation{
+    width: 350px;
+    background: #f0f4f9;
+    padding: 1rem;
+    transition: all0.3s ease-in-out;
+}
+
+.sideNavigation .topBarAction{
+    margin: 15px;
+    cursor: pointer;
+}
+.sideNavigation .topBarAction i {
+    font-size: 18px;
+}
+
+.sideNavigation .sideNavButton{
+    margin-top: 50px;
+    margin-bottom: 30px  ;
+}
