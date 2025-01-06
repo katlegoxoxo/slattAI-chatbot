@@ -38,3 +38,41 @@ i{
     margin-top: 50px;
     margin-bottom: 30px  ;
 }
+.sideNavigation .chatHistory{
+   max-height: 250px;
+   overflow-y:scroll ;
+}
+
+.sideNavigation .chatHistory ::-webkit-scrollbar {
+   display: none;
+
+ }
+ .sideNavigation .chatHistory h5{
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    margin: 15px 5px;
+ }
+ ul{
+    list-style-type: none;
+ }
+ .sideNavigation .chatHistory li{
+   height: 40px;
+   border-radius: 50px;
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   cursor: pointer;
+   font-size: 14px;
+   display: inline-block;
+   width: 225px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+ .sideNavigation .chatHistory i{
+    padding-right: 10px;
+ }
+ .sideNavigation .chatHistory li:hover{
+background: #dde3ea;
+ }
