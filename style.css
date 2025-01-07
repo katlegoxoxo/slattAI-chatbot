@@ -148,23 +148,70 @@ ul {
 }
 
 .chatWindow .startContent h1 .brandHello {
-    background: linear-gradient(74deg,
-            #4285f4 0,
-            #9b72cb 9%,
-            #d96570 20%,
-            #d96570 24%,
-            #9b72cb 35%,
-            #4285f4 44%,
-            #9b72cb 50%,
-            #d96570 56%,
-            #000000 75%,
-            #000000 100%);
+    background: rgb(2, 0, 36);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 227, 7, 1) 50%, rgba(0, 0, 0, 1) 100%);
 
-            background-size: 40% 100%;
-            position: relative;
-            display: inline-block;
-            color: transparent;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+    background-size: 40% 100%;
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+.chatWindow .startContent .brandQuestion {
+    color: #c4c7c5;
+}
+
+.chatWindow .startContent ul {
+    display: inline-flex;
+    width: 830px;
+    margin-top: 50px;
+}
+
+.chatWindow .startContent ul li {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.chatWindow .startContent ul li:hover {
+    background: #dde3ea;
+}
+
+.chatWindow .chatContent{
+    overflow-y: scroll;
+    width: 900px;
+    height: 650px;
+}
+.chatWindow .chatContent::-webkit-scrollbar{
+   display: none;
+}
+
+.inputArea, .privacyPolicy{
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+    background: #f0f4f9;
+    border-radius: 50px;
+    padding: 4px 8px;
+}
+.privacyPolicy{
+    bottom: 5px;
+    font-size: 12px;
+    background: transparent;
+}
+
+.inputArea input{
+
+    width: 800px;
+    height: 50px;
+    padding: 20px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background: transparent;
+
+}
