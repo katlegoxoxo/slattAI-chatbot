@@ -7,72 +7,164 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background: white;
     height: 100vh;
     font-family: "Outfit";
 }
-i{
+
+i {
     font-size: 16px;
 }
-.container{
+
+.container {
     height: 100%;
     display: flex;
 }
-.sideNavigation{
+
+.sideNavigation {
     width: 350px;
     background: #f0f4f9;
     padding: 1rem;
     transition: all0.3s ease-in-out;
 }
 
-.sideNavigation .topBarAction{
+.sideNavigation .topBarAction {
     margin: 15px;
     cursor: pointer;
 }
+
 .sideNavigation .topBarAction i {
     font-size: 18px;
 }
 
-.sideNavigation .sideNavButton{
+.sideNavigation .sideNavButton {
     margin-top: 50px;
-    margin-bottom: 30px  ;
+    margin-bottom: 30px;
 }
-.sideNavigation .chatHistory{
-   max-height: 250px;
-   overflow-y:scroll ;
+
+.sideNavigation .chatHistory {
+    max-height: 250px;
+    overflow-y: scroll;
 }
 
 .sideNavigation .chatHistory ::-webkit-scrollbar {
-   display: none;
+    display: none;
 
- }
- .sideNavigation .chatHistory h5{
+}
+
+.sideNavigation .chatHistory h5 {
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.25rem;
     margin: 15px 5px;
- }
- ul{
+}
+
+ul {
     list-style-type: none;
- }
- .sideNavigation .chatHistory li{
-   height: 40px;
-   border-radius: 50px;
-   display: flex;
-   align-items: center;
-   padding: 10px;
-   cursor: pointer;
-   font-size: 14px;
-   display: inline-block;
-   width: 225px;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
- }
- .sideNavigation .chatHistory i{
+}
+
+.sideNavigation .chatHistory li {
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    width: 225px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sideNavigation .chatHistory i {
     padding-right: 10px;
- }
- .sideNavigation .chatHistory li:hover{
-background: #dde3ea;
- }
+}
+
+.sideNavigation .chatHistory li:hover,
+.sideNavigation .actionList button:hover {
+    background: #dde3ea;
+}
+
+.sideNavigation .sideNavButton button {
+    height: 40px;
+    width: 140px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background: #dde3ea;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.sideNavigation .actionList {
+    position: fixed;
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sideNavigation .actionList button {
+    margin: 1px;
+    padding: 10px;
+    text-align: left;
+    border: 50px;
+    border: none;
+    outline: none;
+    width: 230px;
+    cursor: pointer;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.sideNavigation .actionList button .collapseText {
+    padding: 0 10px;
+
+}
+
+.chatWindow {
+    width: 100%;
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.chatWindow .startContent {
+    min-width: 830px;
+}
+
+.chatWindow .startContent h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    letter-spacing: normal;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-top: 18px;
+}
+
+.chatWindow .startContent h1 .brandHello {
+    background: linear-gradient(74deg,
+            #4285f4 0,
+            #9b72cb 9%,
+            #d96570 20%,
+            #d96570 24%,
+            #9b72cb 35%,
+            #4285f4 44%,
+            #9b72cb 50%,
+            #d96570 56%,
+            #000000 75%,
+            #000000 100%);
+
+            background-size: 40% 100%;
+            position: relative;
+            display: inline-block;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+}
+
