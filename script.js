@@ -1,0 +1,9 @@
+const sideNavigation = document.querySelector(".sideNavigation"),
+sideBarToggle= document.querySelector(".fa-bars"),
+startContentUl= document.querySelector(".startContentUl ul"),
+inputArea= document.querySelector(".inputArea input"),
+sendRequest= document.querySelector(".fa-solid fa-paper-plane"),
+chatHistory= document.querySelector(".chatHistory"),
+startContent= document.querySelector(".startContent"),
+chatContent= document.querySelector(".chatContent"),
+results= document.querySelector(".results");
