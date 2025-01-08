@@ -126,6 +126,23 @@ ul {
     padding: 0 10px;
 
 }
+.sideNavigation.expandClose {
+    width: 68px; /* Collapsed width */
+}
+
+.sideNavigation.expandClose .collapseText {
+    display: none; /* Hide text */
+}
+
+.sideNavigation.expandClose .chatHistory {
+    display: none; /* Hide chat history */
+}
+
+.sideNavigation.expandClose .sideNavButton button,
+.sideNavigation.expandClose .actionList button {
+    width: 45px; /* Shrink button width */
+    text-align: center; /* Center-align icons */
+}
 
 .chatWindow {
     width: 100%;
@@ -181,6 +198,27 @@ ul {
     background: #dde3ea;
 }
 
+.chatWindow .startContent .promptSuggestion{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 150px;
+}
+.chatWindow .startContent .promptSuggestion p{
+    margin: 1rem;
+}
+
+.chatWindow .startContent .promptSuggestion .icon{
+   text-align: end;
+}
+
+.chatWindow .startContent .promptSuggestion .i{
+   background: #fff;
+   padding: 10px;
+   border-radius: 50px;
+ }
+
+
 .chatWindow .chatContent{
     overflow-y: scroll;
     width: 900px;
@@ -197,11 +235,13 @@ ul {
     background: #f0f4f9;
     border-radius: 50px;
     padding: 4px 8px;
+    text-align: center;
 }
 .privacyPolicy{
     bottom: 5px;
     font-size: 12px;
     background: transparent;
+    text-align: center;
 }
 
 .inputArea input{
@@ -214,4 +254,22 @@ ul {
     font-size: 16px;
     background: transparent;
 
+}
+.startContent .privacyPolicy{
+    text-align: center;
+}
+
+.inputArea .iconGroup{
+    position: relative;
+    right: 5px;
+}
+.inputArea .iconGroup i {
+    padding: 15px;
+    font-size: 15x;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.inputArea .iconGroup i:nth-child(3) {
+   display: none;
 }
