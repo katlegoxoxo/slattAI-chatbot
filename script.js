@@ -2,7 +2,7 @@ const sideNavigation = document.querySelector(".sideNavigation"),
     sideBarToggle = document.querySelector(".fa-solid fa-bars"),
     startContentUl = document.querySelector(".startContentUl ul"),
     inputArea = document.querySelector(".inputArea input"),
-    sendRequest = document.querySelector(".fa-solid fa-paper-plane"),
+    sendRequest = document.querySelector(".fa-solid.fa-paper-plane"),
     chatHistory = document.querySelector(".chatHistory"),
     startContent = document.querySelector(".startContent"),
     chatContent = document.querySelector(".chatContent"),
@@ -81,20 +81,55 @@ sendRequest.addEventListener("click", () => {
 function getGeminiResponse(question, appendHistory) {
     console.log(question);
 
+    const chatHistory = document.querySelector(".chatHistory ul");
+    const results = document.querySelector(".results");
+    const inputArea = document.querySelector(".inputArea input");
+    const startContent = document.querySelector(".startContent");
+    const chatContent = document.querySelector(".chatContent");
+
+    // Add question to chat history
     let historyLi = document.createElement("li");
     historyLi.innerHTML = `<i class="fa-solid fa-message"></i>${question}`;
     chatHistory.append(historyLi);
 
-    const AIURL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC5lD-EVeT9bCrxH967PxQ-1rNEsAvle9w`
+    // Clear previous results
+    results.innerHTML = "Loading...";
+
+    // Clear input area
+    inputArea.value = "";
+
+    // Show chat content and hide start content
+    startContent.style.display = "none";
+    chatContent.style.display = "block";
+
+    const AIURL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC5lD-EVeT9bCrxH967PxQ-1rNEsAvle9w`;
 
     fetch(AIURL, {
         method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
         body: JSON.stringify({
-            "contents": [{
-                "parts": [{ text: question }]}],
+            contents: [
+                {
+                    parts: [{ text: question }],
+                },
+            ],
         }),
-
-    }).then((response) => response.json()).then ((data) =>{
-        console.log(data);
     })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts[0].text) {
+                results.innerHTML = data.candidates[0].content.parts[0].text;
+                console.log("AI Response:", data.candidates[0].content.parts[0].text);
+
+
+            } else {
+                results.innerHTML = "No response from AI. Try again later.";
+            }
+        })
+        .catch((error) => {
+            console.error("Error fetching AI response:", error);
+            results.innerHTML = "Error fetching AI response. Try again later.";
+        });
 }
